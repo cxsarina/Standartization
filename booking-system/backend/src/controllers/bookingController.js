@@ -1,5 +1,15 @@
 const pool = require("../config/db");
 
+/**
+ * Функція для отримання всіх записів про бронювання з бази даних.
+ * Відповідь на запит надається у форматі JSON з усіма даними, відсортованими за датою та часом.
+ *
+ * @async
+ * @function getBookings
+ * @param {Object} req - Об'єкт запиту Express.
+ * @param {Object} res - Об'єкт відповіді Express.
+ * @returns {void}
+ */
 const getBookings = async (req, res) => {
     try {
         const [rows] = await pool.query("SELECT * FROM bookings ORDER BY date, time");
@@ -10,6 +20,17 @@ const getBookings = async (req, res) => {
     }
 };
 
+/**
+ * Функція для створення нового бронювання в базі даних.
+ * При успішному створенні повертається повідомлення та ідентифікатор нового бронювання.
+ *
+ * @async
+ * @function createBooking
+ * @param {Object} req - Об'єкт запиту Express, що містить дані бронювання в тілі запиту.
+ * @param {Object} res - Об'єкт відповіді Express.
+ * @returns {void}
+ * @throws {Error} Викидає помилку, якщо не всі обов'язкові поля присутні у запиті або при помилці в процесі створення бронювання.
+ */
 const createBooking = async (req, res) => {
     try {
         const { name, email, date, time } = req.body;

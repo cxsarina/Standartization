@@ -1,12 +1,28 @@
 import { useEffect } from "react";
 import useBookings from "../store/useBookings";
 
+/**
+ * Компонент для відображення списку бронювань.
+ * Використовує глобальний стан для отримання і відображення бронювань.
+ *
+ * @component
+ * @example
+ * return (
+ *   <BookingList />
+ * )
+ */
 const BookingList = () => {
     const { bookings, fetchBookings } = useBookings();
 
+    /**
+     * Викликається при монтуванні компонента для завантаження списку бронювань.
+     * Викликає функцію `fetchBookings` для отримання даних.
+     *
+     * @returns {void}
+     */
     useEffect(() => {
         fetchBookings();
-    }, []);
+    }, []); // Пустий масив вказує на те, що хук виконується лише один раз при монтуванні компонента.
 
     return (
         <div className="p-4">

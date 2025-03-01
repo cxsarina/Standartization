@@ -1,5 +1,15 @@
 import CookieConsent from "react-cookie-consent";
 
+/**
+ * Компонент для відображення попапу для погодження з використанням файлів cookie.
+ * Використовує бібліотеку `react-cookie-consent` для показу попапу з можливістю прийняття або відхилення файлів cookie.
+ *
+ * @component
+ * @example
+ * return (
+ *   <CookiePopup />
+ * )
+ */
 const CookiePopup = () => {
     return (
         <CookieConsent

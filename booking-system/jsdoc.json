@@ -1,0 +1,9 @@
+{
+  "source": {
+    "include": ["backend/src", "frontend/src"],
+    "exclude": ["node_modules", "dist"]
+  },
+  "opts": {
+    "destination": "./docs"
+  }
+}
