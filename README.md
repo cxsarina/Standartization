@@ -40,4 +40,4 @@ npm start
 Це запустить сервер на http://localhost:5000
 ## Ліцензія
 Цей проект ліцензований під ліцензією MIT.
-Деталі у файлі LICENSE а також у [звіті](./license-report.txt)
+Деталі у файлі LICENSE а також у [звіті](./booking-system/license-report.txt)
