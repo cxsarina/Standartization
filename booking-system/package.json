@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "generate-docs": "jsdoc -c jsdoc.json"
+    "generate-docs": "jsdoc backend/src/controllers frontend/src frontend/src/components -c jsdoc.json"
   },
 "devDependencies": {
     "jsdoc": "^4.0.4"
