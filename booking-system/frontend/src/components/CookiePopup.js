@@ -1,27 +1,21 @@
-import { useState, useEffect } from "react";
-import Cookies from "js-cookie";
+import CookieConsent from "react-cookie-consent";
 
 const CookiePopup = () => {
-    const [showPopup, setShowPopup] = useState(false);
-
-    useEffect(() => {
-        if (!Cookies.get("cookiesAccepted")) {
-            setShowPopup(true);
-        }
-    }, []);
-
-    const acceptCookies = () => {
-        Cookies.set("cookiesAccepted", "true", { expires: 365 });
-        setShowPopup(false);
-    };
-
-    if (!showPopup) return null;
-
     return (
-        <div className="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between">
-            <span>Цей сайт використовує cookies для покращення роботи.</span>
-            <button className="bg-green-500 px-4 py-2 rounded" onClick={acceptCookies}>Згоден</button>
-        </div>
+        <CookieConsent
+            location="bottom"
+            buttonText="Прийняти"
+            declineButtonText="Відхилити"
+            enableDeclineButton
+            cookieName="userConsent"
+            expires={150}
+            style={{ background: "#2B373B" }}
+            buttonStyle={{ background: "#4CAF50", color: "#fff", fontSize: "14px" }}
+            declineButtonStyle={{ background: "#F44336", color: "#fff", fontSize: "14px" }}
+        >
+            Ми використовуємо файли cookie для покращення вашого досвіду. Продовжуючи використовувати сайт, ви погоджуєтесь з нашою{" "}
+            <a href="/privacy-policy" style={{ color: "#A8E6CF" }}>Політикою конфіденційності</a>.
+        </CookieConsent>
     );
 };
 

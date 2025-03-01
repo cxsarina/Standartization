@@ -1,0 +1,10 @@
+├─ MIT: 101
+├─ ISC: 11
+├─ Apache-2.0: 5
+├─ MIT*: 4
+├─ BSD-2-Clause: 2
+├─ BSD-3-Clause OR MIT: 1
+├─ Python-2.0: 1
+├─ BSD-3-Clause: 1
+├─ BSD: 1
+└─ BSD*: 1
